@@ -1,0 +1,22 @@
+// Load the texture
+var textureLoader = new THREE.TextureLoader();
+var texture = textureLoader.load('path_to_your_texture.jpg');
+
+// Load the displacement map
+var displacementMap = textureLoader.load('path_to_your_displacement_map.jpg');
+
+// Create the material with the texture and displacement map
+var material = new THREE.MeshPhongMaterial({
+  map: texture,
+  displacementMap: displacementMap,
+  displacementScale: 0.1 // Adjust this value to change the amount of extrusion
+});
+
+// Create the geometry
+var geometry = new THREE.PlaneGeometry(4, 4);
+
+// Create the mesh
+var plane = new THREE.Mesh(geometry, material);
+
+// Add the mesh to the scene
+scene.add(plane);
