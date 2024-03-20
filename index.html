@@ -76,7 +76,11 @@
         <a-entity id="camera" camera position="0 90 0" rotation="-90 0 0" wasd-controls></a-entity>
 
         <!-- Add a sky element to create a 3D space -->
+          <a-assets>
+            <img id="sky" src="sky.jpg">
+         </a-assets>
         <a-sky color="#ECECEC"></a-sky>
+        <a-sky src="#sky"></a-sky>
 
         <!-- Rotate the cube based on keyboard input -->
         <script>
