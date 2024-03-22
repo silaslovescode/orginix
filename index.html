@@ -46,16 +46,6 @@
 
 <body>
   <a-scene background="color: #DADADA">
-  <!-- Existing target -->
-  <a-entity class="target" target="healthPoints: 10" geometry="primitive: box" material="color: teal" position="0 0 -4" hit-handler></a-entity>
-
-  <!-- Additional targets -->
-  <a-entity class="target" target="healthPoints: 8" geometry="primitive: box" material="color: orange" position="-2 0 -4" hit-handler></a-entity>
-  <a-entity class="target" target="healthPoints: 12" geometry="primitive: box" material="color: purple" position="2 0 -4" hit-handler></a-entity>
-  <!-- Add more targets as needed -->
-
-  <!-- Other elements in your scene (gun, camera, etc.) -->
-  <a-scene background="color: #DADADA">
     <a-entity id="bulletTemplate" bullet geometry="primitive: sphere; radius: 0.5" material="color: purple" wasd-controls"></a-entity>
 
     <a-entity class="target" target="healthPoints: 10" geometry="primitive: box" material="color: teal" position="0 0 -4" hit-handler ></a-entity>
@@ -63,17 +53,13 @@
     <a-entity id="gun" shooter geometry="primitive: box; width: 0.1; height: 0.1; depth: 0.3" material="color: red" click-to-shoot position="0 0 -1" wasd-controls></a-entity>
 
     <a-camera id="camera" position="-1 0 0" shooter click-to-shoot" wasd-controls></a-camera>
-        <a-assets>
-            <img id="grid" src="1.png">
-            <a-assets>
-                <a-asset-item id="scene" src="1.gltf"></a-asset-item>
-            </a-assets>
-        </a-assets>
-
         <!-- Add a box (our cube) -->
         <a-box id="rubiks-cube" color="#FFFFFF" position="0 1 0" wasd-controls></a-box>
 
         <!-- Add a ground plane -->
+        <a-plane src="#grid" transparent="true" rotation="-90 0 0" width="100" height="100"></a-plane>
+
+            <!-- Add a ground plane -->
         <a-plane src="#grid" transparent="true" rotation="-90 0 0" width="100" height="100"></a-plane>
         <!-- Define the 3x3 grid of planes -->
         <a-plane color="#FF0000" position="-1 1 -2"></a-plane> <!-- Red -->
@@ -87,6 +73,8 @@
         <a-plane color="#FFA500" position="-1 -1 -2"></a-plane> <!-- Orange -->
         <a-plane color="#008000" position="0 -1 -2"></a-plane> <!-- Dark Green -->
         <a-plane color="#800080" position="1 -1 -2"></a-plane> <!-- Purple -->
+        
+
         <!-- Ambient Light -->
         <a-entity light="type: ambient; color: #CCC; intensity: 0.5" rotation="-90 0 0" wasd-controls></a-entity>
 
@@ -133,8 +121,63 @@
             document.querySelector('a-scene').setAttribute('follow-cube', '');
         </script>
         <a-entity camera position="0 0 3" look-controls></a-entity>
-</body>
-</html>
+        <a-entity geometry="primitive: plane; width: 4; height: 4;" material="color: grey;"></a-entity>
+        <a-entity geometry="primitive: plane; width: 4; height: 4;" material="color: grey;"></a-entity>
+
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="-0.5 0.5 0"></a-entity>
+        <a-text value="X: -0.5, Y: 0.5, Z: 0" position="-0.5 0.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="-1.5 1.5 0"></a-entity>
+        <a-text value="X: -1.5, Y: 1.5, Z: 0" position="-1.5 1.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="-0.5 -0.5 0"></a-entity>
+        <a-text value="X: -0.5, Y: -0.5, Z: 0" position="-0.5 -0.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="0.5 -0.5 0"></a-entity>
+        <a-text value="X: 0.5, Y: -0.5, Z: 0" position="0.5 -0.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="-0.5 1.5 0"></a-entity>
+        <a-text value="X: -0.5, Y: 1.5, Z: 0" position="-0.5 1.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="0.5 -1.5 0"></a-entity>
+        <a-text value="X: 0.5, Y: -1.5, Z: 0" position="0.5 -1.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="0.5 1.5 0"></a-entity>
+        <a-text value="X: 0.5, Y: 1.5, Z: 0" position="0.5 1.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="-0.5 -1.5 0"></a-entity>
+        <a-text value="X: -0.5, Y: -1.5, Z: 0" position="-0.5 -1.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;" position="1.5 1.5 0"></a-entity>
+        <a-text value="X: 1.5, Y: 1.5, Z: 0" position="1.5 1.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="-1.5 -1.5 0"></a-entity>
+        <a-text value="X: -1.5, Y: -1.5, Z: 0" position="-1.5 -1.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="-1.5 -0.5 0"></a-entity>
+        <a-text value="X: -1.5, Y: -0.5, Z: 0" position="-1.5 -0.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="1.5 -1.5 0"></a-entity>
+        <a-text value="X: 1.5, Y: -1.5, Z: 0" position="1.5 -1.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="1.5 -0.5 0"></a-entity>
+        <a-text value="X: 1.5, Y: -0.5, Z: 0" position="1.5 -0.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="-1.5 -0.5 0"></a-entity>
+        <a-text value="X: -1.5, Y: -0.5, Z: 0" position="-1.5  0.5  0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="1.5 -0.5 0"></a-entity>
+        <a-text value="X: 1.5, Y: -0.5, Z: 0" position="1.5  -0.5  0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="1.5 0.5 0"></a-entity>
+        <a-text value="X: 1.5, Y: 0.5, Z: 0" position="1.5  0.5  0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+        <a-entity geometry="primitive: plane; width: 1; height: 1;" material="color: grey;"position="0.5 0.5 0"></a-entity>
+        <a-text value="X: 0.5, Y: 0.5, Z: 0" position="0.5 0.5 0.05" color="#ffffff" align="center" scale="0.5 0.5 0.5"></a-text>
+
+
+
     </a-scene>
-</body>
-</html>
+
+
