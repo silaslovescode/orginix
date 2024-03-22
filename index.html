@@ -46,6 +46,16 @@
 
 <body>
   <a-scene background="color: #DADADA">
+  <!-- Existing target -->
+  <a-entity class="target" target="healthPoints: 10" geometry="primitive: box" material="color: teal" position="0 0 -4" hit-handler></a-entity>
+
+  <!-- Additional targets -->
+  <a-entity class="target" target="healthPoints: 8" geometry="primitive: box" material="color: orange" position="-2 0 -4" hit-handler></a-entity>
+  <a-entity class="target" target="healthPoints: 12" geometry="primitive: box" material="color: purple" position="2 0 -4" hit-handler></a-entity>
+  <!-- Add more targets as needed -->
+
+  <!-- Other elements in your scene (gun, camera, etc.) -->
+  <a-scene background="color: #DADADA">
     <a-entity id="bulletTemplate" bullet geometry="primitive: sphere; radius: 0.5" material="color: purple" wasd-controls"></a-entity>
 
     <a-entity class="target" target="healthPoints: 10" geometry="primitive: box" material="color: teal" position="0 0 -4" hit-handler ></a-entity>
